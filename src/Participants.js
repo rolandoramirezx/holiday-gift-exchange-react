@@ -5,7 +5,7 @@ import NavBar from './NavBar';
 
 export default function Participants () {
 
-  const [show, setShow] = React.useState(true);
+  const [show, setShow] = React.useState(false);
   const [name, setName] = React.useState("John Doe");
 
   const handleClose = () => setShow(false);
