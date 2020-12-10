@@ -21,7 +21,7 @@ export default function NavBar(){
             <Nav.Link ><NavLink to="/participants">Participants</NavLink></Nav.Link>
           </Nav>
           <div className="d-flex justify-content-end">
-            <Button onClick={()=>setShow(true)}>Login</Button>
+            <Button className="my-button" onClick={()=>setShow(true)}>Login</Button>
           </div>
         </Navbar.Collapse>
       </Navbar>

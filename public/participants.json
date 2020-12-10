@@ -1,0 +1,9 @@
+{
+    "participants":[
+        {
+            "firstName": "John",
+            "lastName": "Doe",
+            "wishList":"A job offer"
+        }
+    ]
+}

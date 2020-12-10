@@ -1,15 +1,27 @@
-import React from 'react';
-import {Table, Button, Alert} from 'react-bootstrap';
+import React, { useEffect } from 'react';
+import {Alert} from 'react-bootstrap';
 import WishListModal from './WishListModal';
 import NavBar from './NavBar';
+import ParticipantsTable from './ParticipantsTable';
+import axios from 'axios';
 
 export default function Participants () {
 
   const [show, setShow] = React.useState(false);
   const [name, setName] = React.useState("John Doe");
+  const [participants, setParticipants] = React.useState([]);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  async function getParticipants(){
+    const response = await axios.get('./participants.json');
+    setParticipants(response.participants);
+  }
+
+  useEffect(() => {
+    setParticipants();
+  });
 
   return(
     <div>
@@ -17,39 +29,8 @@ export default function Participants () {
       <WishListModal show={show} handleClose={handleClose} name={name}></WishListModal>
     <h1 className="text-center">Participants</h1>
     <Alert variant="success" className="d-flex justify-content-center">This gift exchange has a maximum spending amount of $50.00 USD and  a minimum of $10.00 USD</Alert>
-    <div className="d-flex p-5">
-    <Table striped bordered hover>
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Wish List</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1</td>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td><div className="d-flex justify-content-center"><Button onClick={()=>setShow(true)}>View Wish List</Button></div></td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td><div className="d-flex justify-content-center"><Button onClick={()=>setShow(true)}>View</Button></div></td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td colSpan="2">Larry the Bird</td>
-        <td><div className="d-flex justify-content-center"><Button onClick={()=>setShow(true)}>View</Button></div></td>
-      </tr>
-    </tbody>
-  </Table>
-    </div>
-
+    <ParticipantsTable participants={participants} setShow={setShow}/>
     </div>
   );
 
-}
+} 
