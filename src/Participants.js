@@ -1,5 +1,5 @@
 import React from 'react';
-import {Table, Button} from 'react-bootstrap';
+import {Table, Button, Alert} from 'react-bootstrap';
 import WishListModal from './WishListModal';
 import NavBar from './NavBar';
 
@@ -16,7 +16,7 @@ export default function Participants () {
       <NavBar/>
       <WishListModal show={show} handleClose={handleClose} name={name}></WishListModal>
     <h1 className="text-center">Participants</h1>
-    <p className="text-center">This gift exchange has a maximum spending amount of $50.00 USD and  a minimum of $10.00 USD</p>
+    <Alert variant="success" className="d-flex justify-content-center">This gift exchange has a maximum spending amount of $50.00 USD and  a minimum of $10.00 USD</Alert>
     <div className="d-flex p-5">
     <Table striped bordered hover>
     <thead>

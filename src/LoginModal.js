@@ -21,9 +21,11 @@ export default function LoginModal(props){
                 <Form.Label>Password</Form.Label>
                 <Form.Control type="password" placeholder="Enter your password..." />
             </Form.Group>
+            <div className="d-flex justify-content-end">
             <Button variant="primary">
                 Login
             </Button>
+            </div>
             </Form>
         </Modal.Body>
         <Modal.Footer>

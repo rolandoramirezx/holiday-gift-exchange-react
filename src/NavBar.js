@@ -1,5 +1,6 @@
 import React from 'react';
 import {Nav, Navbar, Button} from 'react-bootstrap';
+import {NavLink} from 'react-router-dom';
 import LoginModal from './LoginModal';
 
 export default function NavBar(){
@@ -12,14 +13,16 @@ export default function NavBar(){
       <div>
         <LoginModal show={show} handleClose={handleClose}/>
         <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="#home">Holiday Gift Exchange</Navbar.Brand>
+        <Navbar.Brand to={"/"}>Holiday Gift Exchange</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link to="/">Home</Nav.Link>
-            <Nav.Link to="/participants">Participants</Nav.Link>
+            <Nav.Link ><NavLink to="/">Home</NavLink></Nav.Link>
+            <Nav.Link ><NavLink to="/participants">Participants</NavLink></Nav.Link>
           </Nav>
-          <Button onClick={()=>setShow(true)}>Login</Button>
+          <div className="d-flex justify-content-end">
+            <Button onClick={()=>setShow(true)}>Login</Button>
+          </div>
         </Navbar.Collapse>
       </Navbar>
       </div>
