@@ -21,18 +21,18 @@ export default function ParticipantsTable(props){
         <td>1</td>
         <td>Mark</td>
         <td>Otto</td>
-        <td><div className="d-flex justify-content-center"><Button onClick={()=>setShow(true)}>View Wish List</Button></div></td>
+        <td><div className="d-flex justify-content-center"><Button variant="info"onClick={()=>setShow(true)}>View Wish List</Button></div></td>
       </tr>
       <tr>
         <td>2</td>
         <td>Jacob</td>
         <td>Thornton</td>
-        <td><div className="d-flex justify-content-center"><Button onClick={()=>setShow(true)}>View</Button></div></td>
+        <td><div className="d-flex justify-content-center"><Button variant="info" onClick={()=>setShow(true)}>View Wish List</Button></div></td>
       </tr>
       <tr>
         <td>3</td>
         <td colSpan="2">Larry the Bird</td>
-        <td><div className="d-flex justify-content-center"><Button onClick={()=>setShow(true)}>View</Button></div></td>
+        <td><div className="d-flex justify-content-center"><Button variant="info" onClick={()=>setShow(true)}>View Wish List</Button></div></td>
       </tr>
         </tbody>
       </Table>
