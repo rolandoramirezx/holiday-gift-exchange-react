@@ -4,6 +4,11 @@
             "firstName": "John",
             "lastName": "Doe",
             "wishList":"A job offer"
+        },
+        {
+            "firstName": "Jane",
+            "lastName": "Doe",
+            "wishList":"A job offer"
         }
     ]
 }

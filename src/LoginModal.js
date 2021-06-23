@@ -4,7 +4,7 @@ import {Form} from 'react-bootstrap';
 
 export default function LoginModal(props){
     
-    const {show, handleClose, name} = props;
+    const {show, handleClose, handleAction} = props;
 
     return(
         <Modal show={show} onHide={handleClose}>
@@ -22,9 +22,7 @@ export default function LoginModal(props){
                 <Form.Control type="password" placeholder="Enter your password..." />
             </Form.Group>
             <div className="d-flex justify-content-end">
-            <Button variant="primary">
-                Login
-            </Button>
+                <Button onClick={handleAction}>Login</Button>
             </div>
             </Form>
         </Modal.Body>
